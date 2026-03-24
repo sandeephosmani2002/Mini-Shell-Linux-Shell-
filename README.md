@@ -1,95 +1,44 @@
-# Mini-Shell-Linux-Shell-
-A C-based Mini Shell that simulates basic UNIX shell functionality. This project supports executing Linux commands, built-in commands, and job control using system calls like fork(), execvp(), and wait().
-📌 Features
+# MiniShell
 
-Executes external Linux commands
+MiniShell is a Linux-based command line interpreter implemented in C. It mimics basic functionalities of a UNIX shell by allowing users to execute internal and external commands.
 
-Supports built-in commands:
+## Features
+- Execution of external Linux commands
+- Built-in commands support
+- Command parsing
+- Pipe handling (`|`)
+- Input and output redirection
+- Background process execution
+- Job control commands (`jobs`, `fg`, `bg`)
+- Signal handling (`Ctrl+C`, `Ctrl+Z`)
+- Process creation using `fork()`
+- Command execution using `exec()` family
 
-cd
+## Technologies Used
+- C Programming
+- Linux
+- POSIX System Calls
 
-pwd
+## Project Files
+- `main.c` – Main shell program
+- `scan_input.c` – Reads and processes user input
+- `command_type.c` – Identifies command type
+- `get_command.c` – Extracts commands from input
+- `execute_internal_commands.c` – Handles built-in commands
+- `execute_external_cmds.c` – Executes external commands
+- `extract_external_commands.c` – Loads external command list
+- `header.h` – Header file
+- `external_commands.txt` – List of supported external commands
+- `Makefile` – Compilation instructions
 
-echo
+## Compilation
+```bash
+make
+```
+## Run
+```bash
+./minishell
+```
+## Author
 
-exit
-
-clear
-
-Supports job control commands:
-
-jobs
-
-fg
-
-bg
-
-Supports running commands in foreground and background
-
-Handles signals:
-
-Ctrl + C (SIGINT)
-
-Ctrl + Z (SIGTSTP)
-
-Displays a custom shell prompt
-
-🗂️ Project Structure
-
-Mini_Shell
-
-├── main.c # Program entry point
-├── shell.c # Main shell loop and command execution
-├── builtins.c # Built-in commands implementation
-├── jobs.c # Background job management (fg, bg, jobs)
-├── signals.c # Signal handling (Ctrl+C, Ctrl+Z)
-└── header.h # Function prototypes and structures
-
-⚙️ Compilation
-
-Use gcc to compile all source files:
-
-gcc *.c
-
-🧪 Usage
-
-Run the compiled program:
-
-./a.out
-
-Example Commands
-ls
-pwd
-cd Documents
-sleep 10 &
-jobs
-fg 1
-
-🧠 Concepts Used
-
-Process Management (fork(), execvp(), wait())
-
-Signals (SIGINT, SIGTSTP)
-
-File Descriptors
-
-Pipes and Redirection (if implemented)
-
-Dynamic Memory Allocation
-
-Data Structures for Job Control
-
-📚 Learning Outcome
-
-This project helps in understanding how a real Linux shell works internally, including:
-
-Process creation and execution
-
-Foreground/background process handling
-
-Signal handling and job control
-
-Implementing built-in shell commands
-
-👨‍💻 Author
-***SANDEEP HOSMANI***
+SANDEEP HOSMANI
